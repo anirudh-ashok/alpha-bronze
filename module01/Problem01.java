@@ -71,7 +71,4 @@ public class Problem01 {
                 
                 return Math.sqrt(op_1);
         }
-        
-        
-        
 }
