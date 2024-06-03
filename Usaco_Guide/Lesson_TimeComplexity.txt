@@ -1,0 +1,45 @@
+Big O Notation: Expresses the worst-case time complexity as a function of n as n
+ gets arbitrarily large
+
+Tip - Lower order terms are ignored
+
+Example 1
+Time_Complexity = O(n)
+'''
+for i in range(5 * n + 17):
+	pass  # constant time code here
+'''
+
+Example 2
+Time_Complexity = O(n * n)
+'''
+for i in range(n):
+	for j in range(i, n):
+		pass  # constant time code here
+'''
+
+Example 3
+Time_Complexity = O(n * n)
+'''
+for i in range(n):
+	for j in range(n):
+		pass  # constant time code here
+
+for i in range(n + 58834):
+	pass  # more constant time code here
+'''
+
+Example 4
+Time_Complexity = O(n*n + m)
+    Since n and m are not lower order terms with respect to each other TC is O(n*n + m)
+'''
+for i in range(n):
+	for j in range(n):
+		pass  # constant time code here
+
+for i in range(m):
+	pass  # more constant time code here
+'''
+
+
+

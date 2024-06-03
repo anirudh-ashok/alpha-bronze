@@ -13,8 +13,10 @@ def binarySearch(array, x, low, high):
 
         mid = ((high+low)//2)
 
-        if array[mid] == x and array[mid-1] != x:
-            return mid
+        if array[mid] == x:
+            for i in range(mid, high):
+                if array[i] != x:
+                    return i - 1
 
         elif array[mid] < x:
             low = mid + 1
@@ -32,3 +34,18 @@ for i in range(q):
 
 for i in query:
     print(i)
+
+'''
+n, q = map(int, input().split(" "))
+arr = list(map(int, input().split(" ")))[::-1]
+query = []
+for i in range(q):
+    cow = int(input())
+    if cow not in arr:
+        query.append(-1)
+    else:
+        query.append(n - arr.index(cow) - 1)
+
+for i in query:
+    print(i)
+'''

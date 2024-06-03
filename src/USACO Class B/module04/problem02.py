@@ -5,28 +5,33 @@ query = []
 def binarySearch(array, x, low, high):
 
     # Repeat until the pointers low and high meet each other
-    while low <= high:
+    while low < high:
 
-        mid = (high - low)//2
+        mid = (high + low)//2
 
-        if array[mid] == x:
-            return mid
-
-        elif array[mid] < x:
+        if array[mid] <= x:
             low = mid + 1
-
+            if array[mid] == x:
+                return mid
         else:
-            high = mid - 1
+            high = mid
 
-    return -1
+    return high
+
 cows = []
 times = []
-x = 0
+x = -1
 for i in range(num_c):
     x += int(input())
-    times.append(x-1)
-print(times)
+    times.append(x)
 
+for i in range(int(cow_Q)):
+    c = int(input())
+    cow = binarySearch(times, c, 0, num_c - 1)
+    cows.append(cow + 1)
+
+for i in cows:
+    print(i)
 
 
 
